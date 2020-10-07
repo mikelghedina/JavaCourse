@@ -42,7 +42,11 @@ public class Person {
         }else{
             System.out.println("That's a lie.");
         }
-
+    }
+    public void becomeOlder(int muchBecomeOlder, int heightNow, int weightNow ){
+        this.age = this.getAge() + muchBecomeOlder;
+        this.height = this.getHeight() + heightNow;
+        this.weight = this.getWeight() + weightNow;
     }
     public void becomeOlder(int howMuchBecomeOlder){
         this.age = this.getAge() + howMuchBecomeOlder;
@@ -51,8 +55,7 @@ public class Person {
         return getAge() >= 18;
     }
     public double bodyMassIndex(){
-        double result = this.getWeight()/this.getHeight();
-        return result;
+        return this.getWeight()/this.getHeight();
     }
 
     @Override
