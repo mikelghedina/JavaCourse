@@ -4,6 +4,7 @@ public class Account {
     private double balance;
     private String owner;
     private boolean hasCredit = false;
+    private double creditAmount;
 
     public Account(String owner, double balance) {
         this.balance = balance;
@@ -40,6 +41,14 @@ public class Account {
 
     public void setHasCredit(boolean hasCredit) {
         this.hasCredit = hasCredit;
+    }
+
+    public double getCreditAmount() {
+        return creditAmount;
+    }
+
+    public void setCreditAmount(double creditAmount) {
+        this.creditAmount = creditAmount;
     }
 
     @Override
