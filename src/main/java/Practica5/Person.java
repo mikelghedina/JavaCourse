@@ -12,11 +12,11 @@ public class Person {
     public int manyBrothers;
     public boolean isPretty;
 
-
     public Person(String name, int age){
         this.name = name;
         this.age = age;
     }
+
     public void Person(String name, int age, double weight, double height){
         this.name = name;
         this.age = age;
