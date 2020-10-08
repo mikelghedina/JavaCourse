@@ -8,6 +8,7 @@ public class Accounts {
         transfer(account1, 600.8, account2);
         personalCredit(account1);
         getCredit(account1, 500.5);
+        //account1.setBalance(0);
         personalCredit(account1);
         payCredit(account1);
         personalCredit(account1);
@@ -20,7 +21,7 @@ public class Accounts {
     }
 
     public static void personalCredit  (Account yourAccount) {
-        System.out.println("Your balance is: " + yourAccount.getBalance());
+        System.out.println(yourAccount.getOwner()+", "+" your balance is: " + yourAccount.getBalance());
     }
     public static void getCredit(Account yourAccount, double creditAmount){
         yourAccount.setCreditAmount(creditAmount);
@@ -30,10 +31,10 @@ public class Accounts {
 
     public static void payCredit (Account yourAccount) {
 
-        if(yourAccount.getBalance() <=0){
+        if(yourAccount.getBalance() <=0 && yourAccount.isHasCredit()){
             System.out.println("Your balance is: " + yourAccount.getBalance());
             System.out.println("You need to pay!");
-        }else{
+        }else if(yourAccount.isHasCredit()){
             yourAccount.withdrawal(yourAccount.getCreditAmount());
         }
     }
