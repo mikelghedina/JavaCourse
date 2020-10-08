@@ -2,8 +2,19 @@ package Practica8;
 
 public class LyraCard {
 
+    private Person person;
+    private MyDate myDate;
     private double balance;
 
+    public LyraCard(double balance, int day, int month, int year, String name, int age){
+        this.balance= balance;
+        this.myDate = new MyDate(day, month, year);
+        this.person = new Person(name, age);
+    }
+    public LyraCard (double balance, MyDate myDate, int day, int month, int year){
+        this.balance = balance;
+        this.myDate = new MyDate(day, month, year);
+    }
     public LyraCard(double balance) {
         this.balance = balance;
     }
@@ -28,4 +39,12 @@ public class LyraCard {
         }
     }
 
+    @Override
+    public String toString() {
+        return "LyraCard{" +
+                "person=" + person +
+                ", myDate=" + myDate +
+                ", balance=" + balance +
+                '}';
+    }
 }

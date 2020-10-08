@@ -15,6 +15,15 @@ public class Test {
         System.out.println("the change was " + theChange );
         System.out.println( unicafeExactum );
 
+        System.out.println("-----------------------------------------------------------------------");
+
+
+        LyraCard card1 = new LyraCard (500, 20, 06,2010, "Mikel", 24);
+        System.out.println(card1);
+
+
+
+
     }
 
 }
