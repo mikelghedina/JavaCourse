@@ -13,11 +13,11 @@ public class Person {
     public boolean isPretty;
 
 
-    public void person(String name, int age){
+    public Person(String name, int age){
         this.name = name;
         this.age = age;
     }
-    public void person(String name, int age, double weight, double height){
+    public void Person(String name, int age, double weight, double height){
         this.name = name;
         this.age = age;
         this.weight = weight;
@@ -95,9 +95,11 @@ public class Person {
     public void setHeight(double height) {
         this.height = height;
     }
+
     public String getName() {
         return name;
     }
+
     public void setName(String name) {
         this.name = name;
     }

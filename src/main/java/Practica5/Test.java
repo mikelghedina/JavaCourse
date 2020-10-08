@@ -2,7 +2,7 @@ package Practica5;
 
 public class Test {
     public static void main(String[] args) {
-        Person andrea = new Person();
+        Person andrea = new Person("joan", 30);
 
         andrea.setHeight(5.5);
         andrea.setWeight(59);
