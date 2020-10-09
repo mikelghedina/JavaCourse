@@ -42,12 +42,12 @@ public class Test {
         desserts.add("Arroz con leche");
         System.out.println(menu1);
 
-        payMenu1(unicafeExactum, card1, menu1);
+        payMenu(unicafeExactum, card1, menu1);
 
     }
-    public static void payMenu1 (CashRegister cashRegister, LyraCard lyraCard, Menu menu1){
+    public static void payMenu (CashRegister cashRegister, LyraCard lyraCard, Menu menu){
         if(cashRegister.payEconomical(lyraCard)){
-            System.out.println("This id: " + lyraCard + " bought " + menu1.getWeekDays());
+            System.out.println("This id: " + lyraCard + " bought " + menu.getWeekDays());
         }
     }
 
