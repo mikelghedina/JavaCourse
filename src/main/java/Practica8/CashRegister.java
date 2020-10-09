@@ -8,6 +8,7 @@ public class CashRegister {
     private final double economicalLunch = 2.50;
     private final double gourmetLunch = 4.00;
 
+
     public CashRegister() {
         // at start the register has 1000 euros
         this.cashInRegister = 1000;
@@ -54,6 +55,7 @@ public class CashRegister {
         // if not, the method returns false
         if(card.balance()>= this.economicalLunch){
             this.economicalSold +=1;
+            loadMoneyToCard(card, economicalLunch);
             return true;
         }else{
             return false;
@@ -69,6 +71,7 @@ public class CashRegister {
         // if not, the method returns false
         if(card.balance()>= this.gourmetLunch){
             this.gourmetSold += 1;
+            loadMoneyToCard(card, this.gourmetLunch);
             return true;
         }else{
             return false;
