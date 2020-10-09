@@ -41,6 +41,7 @@ public class Test {
         seconds.add("Entrecot");
         desserts.add("Arroz con leche");
         System.out.println(menu1);
+
         payMenu1(unicafeExactum, card1, menu1);
 
     }
