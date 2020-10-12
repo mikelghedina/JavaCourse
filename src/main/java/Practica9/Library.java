@@ -1,7 +1,5 @@
 package Practica9;
 
-
-
 import java.util.ArrayList;
 
 public class Library {
@@ -17,21 +15,40 @@ public class Library {
     }
 
     public ArrayList<Book> searchByTitle(String title){
-        if(this.bookList.contains(title)){
-            return this.bookList;
-        }else{
-            System.out.println("no matches found");
-            return null;
+        ArrayList<Book> matches = new ArrayList<>();
+        for(Book book : this.bookList){
+            System.out.println(book.getTitle());
+            if(book.getTitle().contains(title)){
+                matches.add(book);
+                System.out.println(matches);
+            }
         }
+        return this.bookList;
     }
-    /*ArrayList<Book> searchByPublisher(String publisher){
+    ArrayList<Book> searchByPublisher(String publisher){
+        ArrayList<Book> matches = new ArrayList<>();
+        for(Book book : this.bookList){
+            System.out.println(book.getTitle());
+            if(book.getPublisher().contains(publisher)){
+                matches.add(book);
+                System.out.println(matches);
+            }
+        }
+        return this.bookList;
 
+    }
+    public ArrayList<Book> searchByYear(int year){
+        ArrayList<Book> matches = new ArrayList<>();
+        for(Book book : this.bookList){
+            System.out.println(book.getTitle());
+            if(book.getPublishingYear()== year){
+                matches.add(book);
+                System.out.println(matches);
+            }
+        }
+        return this.bookList;
 
-    }*/
-    /*public ArrayList<Book> searchByYear(int year){
-
-
-    }*/
+    }
 
 
     public void addBook(Book newBook){

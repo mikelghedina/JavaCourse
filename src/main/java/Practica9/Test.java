@@ -17,7 +17,7 @@ public class Test {
 
         barcelonaLibrary.printBooks();
 
-        barcelonaLibrary.searchByTitle("Misery");
+        barcelonaLibrary.searchByTitle("Mis");
 
 
     }
