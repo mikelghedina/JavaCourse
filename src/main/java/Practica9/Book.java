@@ -6,8 +6,13 @@ public class Book {
     private String author;
     private int publishingYear;
 
-
-
+    public Book(String title) {
+        this.title = title;
+    }
+    public Book(String title, String author) {
+        this.title = title;
+        this.author= author;
+    }
     public Book(String title, String publisher, int publishingYear) {
         this.title = title;
         this.publisher = publisher;
@@ -20,8 +25,15 @@ public class Book {
         this.author = author;
     }
     public void printBook (){
-        System.out.println(this.title + ", " +this.author + ", "+this.publisher + ", " + this.publishingYear + ".");
+        if(this.author== null){
+            System.out.println(this.title + ", "+ this.publisher+ ", " + this.publishingYear + ".");
+        }else if(this.publisher == null){
+            System.out.println(this.title + ", " +this.author + ", "+this.publishingYear + ".");
+        }else{
+            System.out.println(this.title + ", " +this.author + ", "+this.publisher + ", " + this.publishingYear + ".");
+        }
     }
+
     @Override
     public String toString() {
         return "Book{" +

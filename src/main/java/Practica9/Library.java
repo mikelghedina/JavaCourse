@@ -16,9 +16,14 @@ public class Library {
         this.bookList = new ArrayList<>();
     }
 
-    /*public ArrayList<Book> searchByTitle(String title){
-
-    }*/
+    public ArrayList<Book> searchByTitle(String title){
+        if(this.bookList.contains(title)){
+            return this.bookList;
+        }else{
+            System.out.println("no matches found");
+            return null;
+        }
+    }
     /*ArrayList<Book> searchByPublisher(String publisher){
 
 
@@ -27,6 +32,7 @@ public class Library {
 
 
     }*/
+
 
     public void addBook(Book newBook){
         bookList.add(newBook);
