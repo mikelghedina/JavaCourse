@@ -24,6 +24,7 @@ public class Book {
         this.publishingYear = publishingYear;
         this.author = author;
     }
+
     public void printBook (){
         if(this.author== null){
             System.out.println(this.title + ", "+ this.publisher+ ", " + this.publishingYear + ".");

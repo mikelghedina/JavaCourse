@@ -20,34 +20,35 @@ public class Library {
             System.out.println(book.getTitle());
             if(book.getTitle().contains(title)){
                 matches.add(book);
-                System.out.println(matches);
+            }else{
+                System.out.println("No matches found.");
             }
         }
-        return this.bookList;
+        return matches;
     }
     ArrayList<Book> searchByPublisher(String publisher){
         ArrayList<Book> matches = new ArrayList<>();
         for(Book book : this.bookList){
-            System.out.println(book.getTitle());
+            System.out.println(book.getPublisher());
             if(book.getPublisher().contains(publisher)){
                 matches.add(book);
-                System.out.println(matches);
+            }else{
+                System.out.println("No matches found.");
             }
         }
-        return this.bookList;
-
+        return matches;
     }
     public ArrayList<Book> searchByYear(int year){
         ArrayList<Book> matches = new ArrayList<>();
         for(Book book : this.bookList){
-            System.out.println(book.getTitle());
+            System.out.println(book.getPublishingYear());
             if(book.getPublishingYear()== year){
                 matches.add(book);
-                System.out.println(matches);
+            }else{
+                System.out.println("No matches found.");
             }
         }
-        return this.bookList;
-
+        return matches;
     }
 
 
