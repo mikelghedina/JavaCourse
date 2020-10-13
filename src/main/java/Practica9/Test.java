@@ -19,15 +19,21 @@ public class Test {
 
         //barcelonaLibrary.searchByTitle("Mis");
 
-        System.out.println(barcelonaLibrary.searchByTitle("Mis"));
+        /*System.out.println(barcelonaLibrary.searchByTitle("Mis"));
         System.out.println(barcelonaLibrary.searchByYear(1905));
         System.out.println(barcelonaLibrary.searchByPublisher("ViKing"));
+        */
 
+        System.out.println("----------------------------------------");
+
+        barcelonaLibrary.printBooks(barcelonaLibrary.searchByTitle("cue"));
 
         System.out.println("----------------------------------------");
 
         barcelonaLibrary.printBooks(barcelonaLibrary.searchByPublisher("lianza"));
 
+        System.out.println("----------------------------------------");
+        barcelonaLibrary.printBooks(barcelonaLibrary.searchByYear(2017));
 
 
     }

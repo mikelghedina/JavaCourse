@@ -27,7 +27,7 @@ public class Library {
     public ArrayList<Book> searchByPublisher(String publisher){
         ArrayList<Book> matches = new ArrayList<>();
         for(Book book : this.bookList){
-            System.out.println(book.getPublisher());
+            //System.out.println(book.getPublisher());
             if(StringUtils.included(book.getPublisher(),publisher)){
                 matches.add(book);
             }else if (book.getPublisher()== null){
