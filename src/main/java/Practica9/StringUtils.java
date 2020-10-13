@@ -3,6 +3,8 @@ package Practica9;
 public class StringUtils {
 
     public static boolean included(String word, String searched){
-        return word.toLowerCase().contains(searched.toLowerCase());
+        if(word.trim().toLowerCase().contains(searched.trim().toLowerCase())){
+            return true;
+        }else {return false;}
     }
 }

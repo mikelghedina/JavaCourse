@@ -26,14 +26,15 @@ public class Test {
 
         System.out.println("----------------------------------------");
 
-        barcelonaLibrary.printBooks(barcelonaLibrary.searchByTitle("cue"));
+        barcelonaLibrary.printBooks(barcelonaLibrary.searchByTitle("cue   "));
 
         System.out.println("----------------------------------------");
 
-        barcelonaLibrary.printBooks(barcelonaLibrary.searchByPublisher("lianza"));
+        barcelonaLibrary.printBooks(barcelonaLibrary.searchByPublisher("   lianza"));
 
         System.out.println("----------------------------------------");
         barcelonaLibrary.printBooks(barcelonaLibrary.searchByYear(2017));
+
 
 
     }
