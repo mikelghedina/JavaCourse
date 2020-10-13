@@ -3,9 +3,9 @@ package Practica9;
 import java.util.ArrayList;
 
 public class Library {
-    private String libraryName;
-    private String localization;
-    private ArrayList<Book> bookList;
+    private final String libraryName;
+    private final String localization;
+    private final ArrayList<Book> bookList;
 
 
     public Library(String libraryName, String localization) {
@@ -17,23 +17,21 @@ public class Library {
     public ArrayList<Book> searchByTitle(String title){
         ArrayList<Book> matches = new ArrayList<>();
         for(Book book : this.bookList){
-            System.out.println(book.getTitle());
-            if(book.getTitle().contains(title)){
+            //System.out.println(book.getTitle());
+            if(StringUtils.included(book.getTitle(),title)){
                 matches.add(book);
-            }else{
-                System.out.println("No matches found.");
             }
         }
         return matches;
     }
-    ArrayList<Book> searchByPublisher(String publisher){
+    public ArrayList<Book> searchByPublisher(String publisher){
         ArrayList<Book> matches = new ArrayList<>();
         for(Book book : this.bookList){
             System.out.println(book.getPublisher());
-            if(book.getPublisher().contains(publisher)){
+            if(StringUtils.included(book.getPublisher(),publisher)){
                 matches.add(book);
-            }else{
-                System.out.println("No matches found.");
+            }else if (book.getPublisher()== null){
+                return matches;
             }
         }
         return matches;
@@ -41,11 +39,9 @@ public class Library {
     public ArrayList<Book> searchByYear(int year){
         ArrayList<Book> matches = new ArrayList<>();
         for(Book book : this.bookList){
-            System.out.println(book.getPublishingYear());
+            //System.out.println(book.getPublishingYear());
             if(book.getPublishingYear()== year){
                 matches.add(book);
-            }else{
-                System.out.println("No matches found.");
             }
         }
         return matches;
@@ -56,11 +52,22 @@ public class Library {
         bookList.add(newBook);
     }
 
-    public void printBooks (){
-
+    public void printBooks (ArrayList<Book> bookList){
         for(Book book: bookList){
             book.printBook();
         }
+    }
+
+    public ArrayList<Book> getBookList() {
+        return bookList;
+    }
+
+    public String getLibraryName() {
+        return libraryName;
+    }
+
+    public String getLocalization() {
+        return localization;
     }
 }
 

@@ -1,6 +1,6 @@
 package Practica9;
 
-public class Book {
+public class Book  {
     private String title;
     private String publisher;
     private String author;
@@ -10,12 +10,18 @@ public class Book {
         this.title = title;
     }
     public Book(String title, String author) {
+        super();
         this.title = title;
         this.author= author;
     }
-    public Book(String title, String publisher, int publishingYear) {
+    public Book(String title, String author, String publisher) {
         this.title = title;
+        this.author = author;
         this.publisher = publisher;
+    }
+    public Book(String title, String author, int publishingYear) {
+        this.title = title;
+        this.author = author;
         this.publishingYear = publishingYear;
     }
     public Book(String title, String author, String publisher, int publishingYear) {
