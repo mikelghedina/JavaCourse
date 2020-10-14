@@ -1,5 +1,6 @@
 package Practica10;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -47,19 +48,33 @@ public class Main {
     }
 
     public static void observation(Scanner input, BirdsDatabase db) {
+
         System.out.println("What was observed? ");
         String birdObserved = input.nextLine();
         for(Bird bird: db.getBirds()){
             if(bird.getName().trim().equalsIgnoreCase(birdObserved.trim())){
                 bird.setObservations(bird.getObservations()+ 1);
+            }else{
+                System.out.println("This is not a bird");
+                break;
             }
         }
 
+
     }//Psittaciformes
     public static void show(Scanner input, BirdsDatabase db) {
+        ArrayList<Bird> matches = new ArrayList<>();
         System.out.println("What? ");
         String birdName = input.nextLine();
         for(Bird bird: db.getBirds()){
+            if(bird.getName().trim().equalsIgnoreCase(birdName.trim())){
+                matches.add(bird);
+            }else{
+                System.out.println("This is not a bird");
+                break;
+            }
+        }
+        for (Bird bird: matches) {
             if(bird.getName().trim().equalsIgnoreCase(birdName.trim())){
                 bird.printBird();
             }
