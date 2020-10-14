@@ -54,11 +54,10 @@ public class Main {
         for(Bird bird: db.getBirds()){
             if(bird.getName().trim().equalsIgnoreCase(birdObserved.trim())){
                 bird.setObservations(bird.getObservations()+ 1);
-            }else{
-                System.out.println("This is not a bird");
-                break;
+                return;
             }
         }
+        System.out.println("This is not a bird");
     }
     public static void show(Scanner input, BirdsDatabase db) {
         System.out.println("What? ");
@@ -66,10 +65,10 @@ public class Main {
         for(Bird bird: db.getBirds()){
             if(bird.getName().trim().equalsIgnoreCase(birdName.trim())){
                 bird.printBird();
-            }else{
-                break;
+                return;
             }
         }
+        System.out.println("Wrong word");
     }
     public static void statistics(Scanner input, BirdsDatabase db) {
         for(Bird bird: db.getBirds()){
