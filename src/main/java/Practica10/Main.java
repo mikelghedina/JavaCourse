@@ -59,28 +59,18 @@ public class Main {
                 break;
             }
         }
-
-
-    }//Psittaciformes
+    }
     public static void show(Scanner input, BirdsDatabase db) {
-        ArrayList<Bird> matches = new ArrayList<>();
         System.out.println("What? ");
         String birdName = input.nextLine();
         for(Bird bird: db.getBirds()){
             if(bird.getName().trim().equalsIgnoreCase(birdName.trim())){
-                matches.add(bird);
+                bird.printBird();
             }else{
-                System.out.println("This is not a bird");
                 break;
             }
         }
-        for (Bird bird: matches) {
-            if(bird.getName().trim().equalsIgnoreCase(birdName.trim())){
-                bird.printBird();
-            }
-        }
     }
-
     public static void statistics(Scanner input, BirdsDatabase db) {
         for(Bird bird: db.getBirds()){
             bird.printBird();
