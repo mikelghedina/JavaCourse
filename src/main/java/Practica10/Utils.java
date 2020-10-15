@@ -23,9 +23,16 @@ public class Utils {
 
         System.out.println("What was observed? ");
         String birdObserved = input.nextLine();
+        System.out.println("Who observed?(Introduce your name)");
+        String personWhoObserved = input.nextLine();
+        System.out.println("Introduce your last name");
+        String lastNamePerson = input.nextLine();
+        System.out.println("How old are you?");
+        int agePerson = Integer.parseInt(input.nextLine());
+        System.out.println("Thanks, your data has been stored successfully");
         for(Bird bird: db.getBirds()){
             if(bird.getName().trim().equalsIgnoreCase(birdObserved.trim())){
-                bird.setObservations(bird.getObservations()+ 1);
+                bird.setObservations(bird.getObservations()+ 1, personWhoObserved,lastNamePerson,agePerson);
                 return;
             }
         }

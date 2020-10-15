@@ -5,14 +5,17 @@ public class Person {
     private String lastName;
     private int age;
 
-    public Person(String name) {
+    public Person(String name){
         this.name = name;
     }
-
     public Person(String name, String lastName, int age) {
         this.name = name;
         this.lastName = lastName;
         this.age = age;
+    }
+
+    public String printPerson(){
+        return this.name + " " + this.lastName + " whose age is "+ this.age+"\n";
     }
 
     @Override
