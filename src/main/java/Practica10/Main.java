@@ -25,7 +25,9 @@ public class Main {
             } else if (command.equals("Show")) {
                 show(scan,db);
             } else if (command.equals("Statistics")) {
-                statistics(scan,db);
+                statistics(scan, db);
+            }else if(command.equals("Menu")){
+                menu();
             } else {
                 System.out.println("Unknown command!");
             }
@@ -74,5 +76,12 @@ public class Main {
         for(Bird bird: db.getBirds()){
             bird.printBird();
         }
+    }
+    public static void menu(){
+        System.out.println("Add");
+        System.out.println("Observation");
+        System.out.println("Show");
+        System.out.println("Statistics");
+        System.out.println("Quit");
     }
 }
