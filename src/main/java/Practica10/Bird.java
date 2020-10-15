@@ -13,6 +13,7 @@ public class Bird {
     public void printBird(){
         System.out.println(this.name + "("+ this.latinName+ "):"+ this.observations + " observations.");
     }
+
     @Override
     public String toString() {
         return "Bird{" +
@@ -20,6 +21,7 @@ public class Bird {
                 ", latinName='" + latinName + '\'' +
                 '}';
     }
+
 
     public String getName() {
         return name;
