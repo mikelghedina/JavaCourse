@@ -25,4 +25,8 @@ public class BirdsDatabase {
     public ArrayList<Bird> getBirds() {
         return birds;
     }
+
+    public void setBirds(ArrayList<Bird> birds) {
+        this.birds = birds;
+    }
 }

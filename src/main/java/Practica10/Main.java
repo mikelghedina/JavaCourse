@@ -8,7 +8,7 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         BirdsDatabase db = new BirdsDatabase();
         Menu menu = new Menu(scan, db);
-
+        db.setBirds(ListInitialBirds.initialBirds());
         menu.loop();
 
     }

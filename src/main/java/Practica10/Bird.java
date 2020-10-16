@@ -54,9 +54,9 @@ public class Bird {
         return observations;
     }
 
-    public void setObservations(int observations, String name, String lastName) {
+    public void setObservations(int observations, String name, String lastName, int age) {
         this.observations = observations;
-        this.personsWhoObserved.add(new Person(name,lastName));
+        this.personsWhoObserved.add(new Person(name,lastName,age));
 
     }
 }
