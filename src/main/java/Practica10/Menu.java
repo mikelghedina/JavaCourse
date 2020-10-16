@@ -6,12 +6,12 @@ import static Practica10.Utils.*;
 
 public class Menu {
 
-    private Scanner scan;
+    private final Scanner scan;
     private BirdsDatabase db;
 
-    public Menu(Scanner scan, BirdsDatabase database) {
-        this.scan = scan;
-        this.db = database;
+    public Menu() {
+        this.scan = new Scanner(System.in);
+        this.db = new BirdsDatabase();
     }
 
     public void loop (){
@@ -24,13 +24,13 @@ public class Menu {
             if (command.equals("Quit")) {
                 break;
             } else if (command.equals("Add")) {
-                add(scan,db);
+                add(scan,getDatabase());
             } else if (command.equals("Observation")) {
-                observation(scan,db);
+                observation(scan,getDatabase());
             } else if (command.equals("Show")) {
-                show(scan,db);
+                show(scan,getDatabase());
             } else if (command.equals("Statistics")) {
-                statistics(db);
+                statistics(getDatabase());
             }else if(command.equals("Menu")){
                 menu();
             }else {

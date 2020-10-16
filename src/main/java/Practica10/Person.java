@@ -5,14 +5,10 @@ public class Person {
     private String lastName;
     private int age;
 
-    public Person(String name, String lastName){
-        this.lastName = lastName;
-        this.name = name;
-    }
-    public Person(String name, String lastName, int age) {
+    public Person(String name, String lastName) {
         this.name = name;
         this.lastName = lastName;
-        this.age = age;
+
     }
 
     public String printPerson(){

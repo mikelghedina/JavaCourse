@@ -20,7 +20,7 @@ public class Bird {
 
     public String printPersons(){
         String personsPrinted = "";
-        for (Person person: personsWhoObserved) {
+        for (Person person: this.personsWhoObserved) {
             personsPrinted = person.printPerson();
         }
         return personsPrinted;
@@ -54,9 +54,9 @@ public class Bird {
         return observations;
     }
 
-    public void setObservations(int observations, String name, String lastName, int age) {
+    public void setObservations(int observations, String name, String lastName) {
         this.observations = observations;
-        this.personsWhoObserved.add(new Person(name,lastName,age));
+        this.personsWhoObserved.add(new Person(name,lastName));
 
     }
 }
