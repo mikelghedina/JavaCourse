@@ -27,12 +27,12 @@ public class Utils {
         String personWhoObserved = input.nextLine();
         System.out.println("Introduce your last name");
         String lastNamePerson = input.nextLine();
-        System.out.println("How old are you?");
-        int agePerson = Integer.parseInt(input.nextLine());
+        //System.out.println("How old are you?");
+        //int agePerson = Integer.parseInt(input.nextLine());
         System.out.println("Thanks, your data has been stored successfully");
         for(Bird bird: db.getBirds()){
             if(bird.getName().trim().equalsIgnoreCase(birdObserved.trim())){
-                bird.setObservations(bird.getObservations()+ 1, personWhoObserved,lastNamePerson,agePerson);
+                bird.setObservations(bird.getObservations()+ 1, personWhoObserved,lastNamePerson);
                 return;
             }
         }
