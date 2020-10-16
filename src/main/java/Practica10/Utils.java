@@ -31,7 +31,7 @@ public class Utils {
         int agePerson = Integer.parseInt(input.nextLine());
         System.out.println("Thanks, your data has been stored successfully");
         for(Bird bird: db.getBirds()){
-            if(bird.getName().trim().equalsIgnoreCase(birdObserved.trim())){
+            if(StringUtils.included(bird, birdObserved)){
                 bird.setObservations(bird.getObservations()+ 1, personWhoObserved,lastNamePerson,agePerson);
                 return;
             }
@@ -42,7 +42,7 @@ public class Utils {
         System.out.println("What? ");
         String birdName = input.nextLine();
         for(Bird bird: db.getBirds()){
-            if(bird.getName().trim().equalsIgnoreCase(birdName.trim())){
+            if(StringUtils.included(bird, birdName)){
                 bird.printBird();
                 return;
             }
