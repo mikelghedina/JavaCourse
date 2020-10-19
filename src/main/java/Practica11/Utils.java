@@ -10,7 +10,8 @@ public class Utils {
 
         int weekDay = calculateDays(day, month, year)% 7;
         System.out.println(weekDay);
-        if(weekDay == 1){
+
+        if(weekDay == year){
             System.out.println(WeekDays.weekDaysNames().get(6)+"/"+getMonthNames(month)+"/"+year);
         }else if (weekDay == 2){
             System.out.println(WeekDays.weekDaysNames().get(0)+"/"+getMonthNames(month)+"/"+year);
@@ -26,6 +27,7 @@ public class Utils {
             System.out.println(WeekDays.weekDaysNames().get(5)+"/"+getMonthNames(month)+"/"+year);
         }
 
+
     }
     public static int checkDate(int day, int month, int year){
         if(day>=InitialDate.day && day<=30 && month>=InitialDate.month && month<=12 && year>=InitialDate.year){
@@ -39,19 +41,20 @@ public class Utils {
         int totalYearsInDays = 0;
         int totalMonthsInDays = 0;
         int differenceDays = 0;
-        if(year>=InitialDate.year){
+        if(checkDate(day, month, year)==1){
             int differenceYears = year-InitialDate.year;
             totalYearsInDays = differenceYears *365;
-        }
-        if(month>=InitialDate.month){
             int differenceMonth = month-InitialDate.month;
             totalMonthsInDays = differenceMonth*30;
-        }
-        if(day>= InitialDate.day){
             differenceDays = day-InitialDate.day;
+        }
+        if(checkDate(day, month, year)==1 && leapYear(year)==year){
+            int differenceYears = year-InitialDate.year;
+            totalYearsInDays = differenceYears *366;
         }
         return totalYearsInDays + totalMonthsInDays + differenceDays;
     }
+
     public static int leapYear(int year){
 
         if(year%2 == 0 && year%100!=0|| year%4 == 0){
