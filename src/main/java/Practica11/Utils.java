@@ -1,7 +1,7 @@
 package Practica11;
 
 
-import java.util.ArrayList;
+import static Practica11.MonthNames.getMonthNames;
 
 public class Utils {
 
@@ -9,22 +9,25 @@ public class Utils {
     public static void readDate(int  day, int  month, int year){
 
         int weekDay = calculateDays(day, month, year)% 7;
-        System.out.println(weekDay);
-
-        if(weekDay == year){
-            System.out.println(WeekDays.weekDaysNames().get(6)+"/"+getMonthNames(month)+"/"+year);
-        }else if (weekDay == 2){
-            System.out.println(WeekDays.weekDaysNames().get(0)+"/"+getMonthNames(month)+"/"+year);
-        }else if (weekDay == 3){
-            System.out.println(WeekDays.weekDaysNames().get(1)+"/"+getMonthNames(month)+"/"+year);
-        }else if (weekDay == 4){
-            System.out.println(WeekDays.weekDaysNames().get(2)+"/"+getMonthNames(month)+"/"+year);
-        }else if (weekDay == 5){
-            System.out.println(WeekDays.weekDaysNames().get(3)+"/"+getMonthNames(month)+"/"+year);
-        }else if (weekDay == 6){
-            System.out.println(WeekDays.weekDaysNames().get(4)+"/"+getMonthNames(month)+"/"+year);
+        //System.out.println(weekDay);
+        if(checkDate(day, month, year) == 1){
+            if(weekDay == year){
+                System.out.println(WeekDays.weekDaysNames().get(6)+"/"+getMonthNames(month)+"/"+year);
+            }else if (weekDay == 2){
+                System.out.println(WeekDays.weekDaysNames().get(0)+"/"+getMonthNames(month)+"/"+year);
+            }else if (weekDay == 3){
+                System.out.println(WeekDays.weekDaysNames().get(1)+"/"+getMonthNames(month)+"/"+year);
+            }else if (weekDay == 4){
+                System.out.println(WeekDays.weekDaysNames().get(2)+"/"+getMonthNames(month)+"/"+year);
+            }else if (weekDay == 5){
+                System.out.println(WeekDays.weekDaysNames().get(3)+"/"+getMonthNames(month)+"/"+year);
+            }else if (weekDay == 6){
+                System.out.println(WeekDays.weekDaysNames().get(4)+"/"+getMonthNames(month)+"/"+year);
+            }else{
+                System.out.println(WeekDays.weekDaysNames().get(5)+"/"+getMonthNames(month)+"/"+year);
+            }
         }else{
-            System.out.println(WeekDays.weekDaysNames().get(5)+"/"+getMonthNames(month)+"/"+year);
+            System.out.println("Introduce a valid date.");
         }
 
 
@@ -63,31 +66,7 @@ public class Utils {
             return 0;
         }
     }
-    public static ArrayList<String> monthNames(){
-        ArrayList<String> monthNames = new ArrayList<>(11);
 
-        monthNames.add("January");
-        monthNames.add("February");
-        monthNames.add("March");
-        monthNames.add("April");
-        monthNames.add("May");
-        monthNames.add("June");
-        monthNames.add("July");
-        monthNames.add("August");
-        monthNames.add("September");
-        monthNames.add("October");
-        monthNames.add("November");
-        monthNames.add("December");
-        return monthNames;
-    }
-    public static String getMonthNames(int month){
-        int m = monthNames().size();
-        for(int i = 0; i <= m; i++){
-            if(month == i){
-                return monthNames().get(month);
-            }
-        }
-        return "this month doesn't even exist.";
-    }
+
 
 }
