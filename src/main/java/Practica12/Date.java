@@ -1,5 +1,5 @@
 package Practica12;
-
+import java.time.LocalDate;
 public class Date {
     private int day;
     private int month;
@@ -9,6 +9,15 @@ public class Date {
         this.day = day;
         this.month = month;
         this.year = year;
+    }
+    public static void getBirthday(Person person){
+
+        LocalDate currentDate= LocalDate.now();
+        System.out.println(person.getBirthDate().day+ person.getBirthDate().month+currentDate.getYear());
+    }
+    public static int calculateAge(int year){
+        int age = LocalDate.now().getYear()-year;
+        return age;
     }
 
     @Override

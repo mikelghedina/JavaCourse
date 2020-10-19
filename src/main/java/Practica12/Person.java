@@ -1,21 +1,31 @@
 package Practica12;
 
-public class Person extends Student {
+public class Person {
     private String name;
     private String lastName;
     private double weight;
     private double height;
-    private int age;
-    private Date birthday;
+    private Date birthDate;
+    private String ID;
 
-    public Person(String name, String lastName, double weight, double height, int age, Date birthday) {
+    public Person(String name, String lastName, double weight, double height, Date birthDate) {
         this.name = name;
         this.lastName = lastName;
         this.weight = weight;
         this.height = height;
-        this.age = age;
-        this.birthday = birthday;
+        this.birthDate = birthDate;
     }
+
+    public Person(String name, String lastName, double weight, double height, Date birthDate, String ID) {
+        this.name = name;
+        this.lastName = lastName;
+        this.weight = weight;
+        this.height = height;
+        this.birthDate = birthDate;
+        this.ID = ID;
+    }
+
+
 
     public String getName() {
         return name;
@@ -49,19 +59,19 @@ public class Person extends Student {
         this.height = height;
     }
 
-    public int getAge() {
-        return age;
+    public Date getBirthDate() {
+        return birthDate;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
     }
 
-    public Date getBirthday() {
-        return birthday;
+    public String getID() {
+        return ID;
     }
 
-    public void setBirthday(Date birthday) {
-        this.birthday = birthday;
+    public void setID(String ID) {
+        this.ID = ID;
     }
 }
