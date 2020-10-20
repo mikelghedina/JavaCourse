@@ -20,6 +20,9 @@ public class Date {
         return age;
     }
 
+    public String printDate(){
+        return getDay() + "/" + getMonth() + "/"+ getYear();
+    }
     @Override
     public String toString() {
         return "Date{" +

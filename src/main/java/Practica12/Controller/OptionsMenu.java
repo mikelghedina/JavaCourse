@@ -1,6 +1,8 @@
 package Practica12.Controller;
 
 
+import Practica12.Model.Date;
+import Practica12.Model.Student;
 import Practica12.Model.StudentDataBase;
 import Practica12.Service.StudentUtils;
 
@@ -23,13 +25,35 @@ public class OptionsMenu {
 
             if(command0.toLowerCase().equalsIgnoreCase("Y".toLowerCase())){
                 System.out.println("Let me ask you a few questions so you are suitable to enter this University.");
+                System.out.println("Write \"Yes\"");
                 String command01= scan.nextLine();
-                //System.out.println("What was your ");
+                //check grades, need to implement, not done yet.
                 if(command01.toLowerCase().equalsIgnoreCase("Yes".toLowerCase())){
                     System.out.println("In order to create an account for you, we need you to introduce the following data:");
-                    String command02 = scan.nextLine();
+                    System.out.println("Name: ");
+                    String name = scan.nextLine();
+                    System.out.println("Last name: ");
+                    String lastName = scan.nextLine();
+                    System.out.println("Weight: ");
+                    double weight = Double.parseDouble(scan.nextLine());
+                    System.out.println("Height: ");
+                    double height = Double.parseDouble(scan.nextLine());
+                    System.out.println("Birthdate: "+ "Day: "); int day = Integer.parseInt(scan.nextLine());
+                    System.out.println("Month: ");int month = Integer.parseInt(scan.nextLine());
+                    System.out.println("Year: "); int year = Integer.parseInt(scan.nextLine());
+                    System.out.println("ID:");
+                    String ID = scan.nextLine();
+                    Student student = new Student(name, lastName,weight,height,new Date(day, month, year),ID);
+                    studentDB.getStudents().add(student);
+                    student.createFullCredentials();
+                    System.out.println("Your account was created successfully!");
+                    System.out.println("These will be your credentials to enter your campus: ");
+                    System.out.println("Username: "+ student.getUserName());
+                    System.out.println("Password: "+ student.getPassword());
+                }else{
+                    System.out.println("Unknown command.");
+                    return;
                 }
-
             }else if (command0.toLowerCase().equalsIgnoreCase("N".toLowerCase())){
                 System.out.println("Enter your Username:");
                 String userName = scan.nextLine();
@@ -57,7 +81,6 @@ public class OptionsMenu {
             }
         }
     }
-
     public StudentDataBase getStudentDB() {
         return studentDB;
     }

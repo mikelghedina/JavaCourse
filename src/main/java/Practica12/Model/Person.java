@@ -33,6 +33,24 @@ public class Person {
         return petsList.size() > 0;
     }
 
+    public String printPerson(){
+        return "Name: " +getName()+ "\nLast Name: "+getLastName() +"\nWeight: "+getWeight() +
+                "\nHeight: "+getHeight()+"\nBirthdate: "+birthDate.printDate()+ "\nID: "+ getID() +
+                "\nPets: " + getPetsList();
+    }
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", weight=" + weight +
+                ", height=" + height +
+                ", birthDate=" + birthDate +
+                ", ID='" + ID + '\'' +
+                ", petsList=" + petsList +
+                '}';
+    }
+
     public String getName() {
         return name;
     }

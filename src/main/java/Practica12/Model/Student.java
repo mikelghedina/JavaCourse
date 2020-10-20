@@ -28,12 +28,12 @@ public class Student extends Person{
     public void createFullCredentials(){
         setUserName();
         setPassword();
-        System.out.println(getUserName());
-        System.out.println(getPassword());
+        //System.out.println(getUserName());
+        //System.out.println(getPassword());
     }
 
     public void printFullStudentInfo(){
-        System.out.println(super.toString());
+        System.out.println(super.printPerson());
         System.out.println("IMC= "+IMC());
         System.out.println("User: "+getUserName());
         System.out.println("Pass: "+getPassword());
