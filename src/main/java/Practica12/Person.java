@@ -1,5 +1,7 @@
 package Practica12;
 
+import java.util.ArrayList;
+
 public class Person {
     private String name;
     private String lastName;
@@ -7,6 +9,7 @@ public class Person {
     private double height;
     private Date birthDate;
     private String ID;
+    private ArrayList<Pet> petsList;
 
     public Person(String name, String lastName, double weight, double height, Date birthDate) {
         this.name = name;
@@ -14,6 +17,7 @@ public class Person {
         this.weight = weight;
         this.height = height;
         this.birthDate = birthDate;
+        this.petsList = new ArrayList<>();
     }
 
     public Person(String name, String lastName, double weight, double height, Date birthDate, String ID) {
@@ -23,9 +27,11 @@ public class Person {
         this.height = height;
         this.birthDate = birthDate;
         this.ID = ID;
+        this.petsList = new ArrayList<>();
     }
-
-
+    public boolean hasPet(){
+        return petsList.size() > 0;
+    }
 
     public String getName() {
         return name;
@@ -73,5 +79,13 @@ public class Person {
 
     public void setID(String ID) {
         this.ID = ID;
+    }
+
+    public ArrayList<Pet> getPetsList() {
+        return petsList;
+    }
+
+    public void setPetsList(ArrayList<Pet> petsList) {
+        this.petsList = petsList;
     }
 }

@@ -7,6 +7,7 @@ public class Pet {
     private ArrayList<Vaccine> vaccines;
     private double weight;
     private double height;
+    private int age;
 
 
     public Pet(String petType, ArrayList<Vaccine> vaccines, double weight, double height) {
@@ -16,7 +17,21 @@ public class Pet {
         this.height = height;
     }
 
+    public Pet(String petType, double weight, double height, int age) {
+        this.petType = petType;
+        this.weight = weight;
+        this.height = height;
+        this.age = age;
+        this.vaccines = new ArrayList<>();
+    }
 
+    public boolean isAdult(){
+        if(this.age>=2){
+            return true;
+        }else{
+            return false;
+        }
+    }
 
     @Override
     public String toString() {
@@ -58,5 +73,13 @@ public class Pet {
 
     public void setHeight(double height) {
         this.height = height;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 }
