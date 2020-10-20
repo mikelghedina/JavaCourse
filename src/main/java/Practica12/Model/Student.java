@@ -16,11 +16,7 @@ public class Student extends Person{
     }
 
     public boolean isLegalAge(){
-        if((Date.calculateAge(getBirthDate().getYear()))>=18){
-            return true;
-        }else{
-            return false;
-        }
+        return (Date.calculateAge(getBirthDate().getYear())) >= 18;
     }
     public double IMC(){
         return getWeight()/(getHeight()*getHeight());
@@ -34,6 +30,7 @@ public class Student extends Person{
 
     public void printFullStudentInfo(){
         System.out.println(super.printPerson());
+        System.out.println("Is this student an adult? "+ isLegalAge());
         System.out.println("IMC= "+IMC());
         System.out.println("User: "+getUserName());
         System.out.println("Pass: "+getPassword());
