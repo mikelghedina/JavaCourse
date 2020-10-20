@@ -2,7 +2,7 @@ package Practica12.View;
 
 
 import Practica12.Controller.OptionsMenu;
-import Practica12.Service.InitialStudents;
+import Practica12.Controller.InitialStudents;
 
 public class Test {
 

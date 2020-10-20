@@ -4,7 +4,6 @@ package Practica12.Controller;
 import Practica12.Model.Date;
 import Practica12.Model.Student;
 import Practica12.Model.StudentDataBase;
-import Practica12.Service.StudentUtils;
 
 import java.util.Scanner;
 

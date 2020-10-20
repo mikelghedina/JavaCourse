@@ -1,4 +1,4 @@
-package Practica12.Service;
+package Practica12.Controller;
 
 import Practica12.Model.Date;
 import Practica12.Model.Student;
