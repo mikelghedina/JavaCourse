@@ -1,4 +1,4 @@
-package Practica12;
+package Practica12.Model;
 
 public class Student extends Person{
 
@@ -22,6 +22,9 @@ public class Student extends Person{
             return false;
         }
     }
+    public double IMC(){
+        return getWeight()/(getHeight()*getHeight());
+    }
     public void createFullCredentials(){
         setUserName();
         setPassword();
@@ -31,6 +34,7 @@ public class Student extends Person{
 
     public void printFullStudentInfo(){
         System.out.println(super.toString());
+        System.out.println("IMC= "+IMC());
         System.out.println("User: "+getUserName());
         System.out.println("Pass: "+getPassword());
 

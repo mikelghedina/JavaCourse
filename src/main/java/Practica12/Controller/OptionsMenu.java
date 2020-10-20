@@ -1,6 +1,8 @@
-package Practica12;
+package Practica12.Controller;
 
-import org.graalvm.compiler.replacements.StringSubstitutions;
+
+import Practica12.Model.StudentDataBase;
+import Practica12.Service.StudentUtils;
 
 import java.util.Scanner;
 
@@ -21,6 +23,12 @@ public class OptionsMenu {
 
             if(command0.toLowerCase().equalsIgnoreCase("Y".toLowerCase())){
                 System.out.println("Let me ask you a few questions so you are suitable to enter this University.");
+                String command01= scan.nextLine();
+                //System.out.println("What was your ");
+                if(command01.toLowerCase().equalsIgnoreCase("Yes".toLowerCase())){
+                    System.out.println("In order to create an account for you, we need you to introduce the following data:");
+                    String command02 = scan.nextLine();
+                }
 
             }else if (command0.toLowerCase().equalsIgnoreCase("N".toLowerCase())){
                 System.out.println("Enter your Username:");

@@ -1,4 +1,4 @@
-package Practica12;
+package Practica12.Model;
 
 import java.util.ArrayList;
 
