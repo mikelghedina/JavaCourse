@@ -1,4 +1,4 @@
-package Practica12.Utils;
+package Practica12.Controller;
 
 import Practica12.Model.Apartment;
 import Practica12.Model.Pet;
