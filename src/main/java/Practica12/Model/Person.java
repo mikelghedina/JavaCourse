@@ -48,7 +48,7 @@ public class Person {
     public String printPerson(){
         return "Name: " +getName()+ "\nLast Name: "+getLastName() +"\nWeight: "+getWeight() +
                 "\nHeight: "+getHeight()+"\nBirthdate: "+birthDate.printDate()+ "\nID: "+ getID() +
-                "\nPets: " + getPetsList();
+                "\nPets: " + getPetsList() + "\n Apartment: " + getApartment();
     }
 
 
@@ -62,6 +62,7 @@ public class Person {
                 ", birthDate=" + birthDate +
                 ", ID='" + ID + '\'' +
                 ", petsList=" + petsList +
+                ", apartment=" + apartment +
                 '}';
     }
 

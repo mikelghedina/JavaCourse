@@ -79,7 +79,7 @@ public class OptionsMenu {
                 String password = scan.nextLine();
                 if(StudentUtils.isAcceptedUserName(studentDB,userName)||StudentUtils.isAcceptedPassword(studentDB, password)){
                     while (true){
-                        System.out.println("Welcome again!");
+                        //System.out.println("Welcome again!");
                         System.out.println("Choose an option: Show, Edit, Exit");
                         String command1 = scan.nextLine();
                         if(command1.toLowerCase().equalsIgnoreCase("Show".toLowerCase())){
