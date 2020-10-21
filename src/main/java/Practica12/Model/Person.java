@@ -10,25 +10,37 @@ public class Person {
     private Date birthDate;
     private String ID;
     private ArrayList<Pet> petsList;
+    private Apartment apartment;
 
-    public Person(String name, String lastName, double weight, double height, Date birthDate) {
+    public Person(String name, String lastName, Date birthDate, String ID,Apartment apartment) {
+        this.name = name;
+        this.lastName = lastName;
+        this.birthDate = birthDate;
+        this.ID = ID;
+        this.apartment = apartment;
+        this.petsList = new ArrayList<>();
+    }
+    public Person(String name, String lastName, double weight, double height, Date birthDate,String ID, Apartment apartment){
         this.name = name;
         this.lastName = lastName;
         this.weight = weight;
         this.height = height;
         this.birthDate = birthDate;
         this.petsList = new ArrayList<>();
+        this.ID = ID;
+        this.apartment = apartment;
     }
 
-    public Person(String name, String lastName, double weight, double height, Date birthDate, String ID) {
+    public Person(String name, String lastName, double weight, double height, Date birthDate, String ID, ArrayList<Pet> petsList) {
         this.name = name;
         this.lastName = lastName;
         this.weight = weight;
         this.height = height;
         this.birthDate = birthDate;
         this.ID = ID;
-        this.petsList = new ArrayList<>();
+        this.petsList = petsList;
     }
+
     public boolean hasPet(){
         return petsList.size() > 0;
     }
@@ -38,6 +50,8 @@ public class Person {
                 "\nHeight: "+getHeight()+"\nBirthdate: "+birthDate.printDate()+ "\nID: "+ getID() +
                 "\nPets: " + getPetsList();
     }
+
+
     @Override
     public String toString() {
         return "Person{" +
@@ -105,5 +119,13 @@ public class Person {
 
     public void setPetsList(ArrayList<Pet> petsList) {
         this.petsList = petsList;
+    }
+
+    public Apartment getApartment() {
+        return apartment;
+    }
+
+    public void setApartment(Apartment apartment) {
+        this.apartment = apartment;
     }
 }

@@ -10,11 +10,12 @@ public class Pet {
     private int age;
 
 
-    public Pet(String petType, ArrayList<Vaccine> vaccines, double weight, double height) {
+    public Pet(String petType, ArrayList<Vaccine> vaccines, double weight, double height, int age) {
         this.petType = petType;
         this.vaccines = vaccines;
         this.weight = weight;
         this.height = height;
+        this.age = age;
     }
 
     public Pet(String petType, double weight, double height, int age) {
@@ -23,6 +24,9 @@ public class Pet {
         this.height = height;
         this.age = age;
         this.vaccines = new ArrayList<>();
+    }
+    public Pet(String petType){
+        this.petType = petType;
     }
 
     public boolean isAdult(){

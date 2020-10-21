@@ -1,7 +1,7 @@
-package Practica12.Controller;
+package Practica12.Utils;
 
 import Practica12.Model.Student;
-import Practica12.Model.StudentDataBase;
+import Practica12.Service.StudentDataBase;
 
 public class StudentUtils {
     public static boolean isAcceptedPassword(StudentDataBase studentDataBase, String password){

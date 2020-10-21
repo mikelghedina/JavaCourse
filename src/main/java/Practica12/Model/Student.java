@@ -1,19 +1,28 @@
 package Practica12.Model;
 
+import java.util.ArrayList;
+
 public class Student extends Person{
 
     private String userName;
     private String password;
 
-    public Student(String name, String lastName, double weight, double height, Date birthDate, String ID) {
-        super(name, lastName, weight, height, birthDate, ID);
+    public Student(String name, String lastName, double weight, double height, Date birthDate, String ID, Apartment apartment) {
+        super(name, lastName, weight, height, birthDate, ID, apartment);
     }
-    public Student(String name, String lastName, double weight, double height, Date birthDate, String ID, String username, String password) {
-        super(name, lastName, weight, height, birthDate, ID);
+    public Student(String name, String lastName, double weight, double height, Date birthDate, String ID, Apartment apartment, String username, String password) {
+        super(name, lastName, weight, height, birthDate, ID, apartment);
         this.userName = username;
         this.password = password;
 
     }
+    public Student(String name, String lastName, double weight, double height, Date birthDate, String ID, ArrayList<Pet> pets, String username, String password) {
+        super(name, lastName, weight, height, birthDate, ID,pets);
+        this.userName = username;
+        this.password = password;
+
+    }
+
 
     public boolean isLegalAge(){
         return (Date.calculateAge(getBirthDate().getYear())) >= 18;

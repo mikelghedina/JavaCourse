@@ -1,4 +1,6 @@
-package Practica12.Model;
+package Practica12.Service;
+
+import Practica12.Model.Student;
 
 import java.util.ArrayList;
 

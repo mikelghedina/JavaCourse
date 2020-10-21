@@ -1,9 +1,14 @@
 package Practica12.Controller;
 
 
+import Practica12.Model.Apartment;
 import Practica12.Model.Date;
+import Practica12.Model.Pet;
 import Practica12.Model.Student;
-import Practica12.Model.StudentDataBase;
+import Practica12.Service.StudentDataBase;
+import Practica12.Utils.EditOptions;
+import Practica12.Utils.StudentUtils;
+import com.sun.tools.jdeprscan.scan.Scan;
 
 import java.util.Scanner;
 
@@ -42,7 +47,21 @@ public class OptionsMenu {
                     System.out.println("Year: "); int year = Integer.parseInt(scan.nextLine());
                     System.out.println("ID:");
                     String ID = scan.nextLine();
-                    Student student = new Student(name, lastName,weight,height,new Date(day, month, year),ID);
+                    System.out.println("Apartment Address:");
+                    String apartment = scan.nextLine();
+                    Student student = new Student(name, lastName,weight,height,new Date(day, month, year),ID,new Apartment(apartment));
+                    System.out.println("Do you have any pet? Y/N");
+                    String hasPet = scan.nextLine();
+                    if(hasPet.toLowerCase().equalsIgnoreCase("Y".toLowerCase())){
+                        System.out.println("Type of Pet:");
+                        String petType = scan.nextLine();
+                        student.getPetsList().add(new Pet(petType));
+                        continue;
+                    }else if(hasPet.toLowerCase().equalsIgnoreCase("N".toLowerCase())){
+                        continue;
+                    }else{
+                        System.out.println("Unknown command");
+                    }
                     studentDB.getStudents().add(student);
                     student.createFullCredentials();
                     System.out.println("Your account was created successfully!");
@@ -61,10 +80,14 @@ public class OptionsMenu {
                 if(StudentUtils.isAcceptedUserName(studentDB,userName)||StudentUtils.isAcceptedPassword(studentDB, password)){
                     while (true){
                         System.out.println("Welcome again!");
-                        System.out.println("Choose an option: Show, Exit");
+                        System.out.println("Choose an option: Show, Edit, Exit");
                         String command1 = scan.nextLine();
                         if(command1.toLowerCase().equalsIgnoreCase("Show".toLowerCase())){
                             StudentUtils.printStudentInfo(studentDB, userName);
+                        }
+                        else if(command1.toLowerCase().equalsIgnoreCase("Edit".toLowerCase())){
+                            System.out.println("What do you want to edit?");
+                            EditOptions.printEditOptions();
                         }else if(command1.toLowerCase().equalsIgnoreCase("Exit".toLowerCase())){
                             return;
                         }else{

@@ -6,6 +6,12 @@ public class Vaccine {
     private Date vaccineDate;
 
 
+    public Vaccine(String vaccineName, boolean isVaccinated, Date vaccineDate) {
+        this.vaccineName = vaccineName;
+        this.isVaccinated = isVaccinated;
+        this.vaccineDate = vaccineDate;
+    }
+
     public String getVaccineName() {
         return vaccineName;
     }
