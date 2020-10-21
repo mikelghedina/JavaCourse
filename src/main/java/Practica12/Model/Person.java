@@ -31,7 +31,7 @@ public class Person {
         this.apartment = apartment;
     }
 
-    public Person(String name, String lastName, double weight, double height, Date birthDate, String ID, ArrayList<Pet> petsList) {
+    public Person(String name, String lastName, double weight, double height, Date birthDate, String ID, Apartment apartment, ArrayList<Pet> petsList) {
         this.name = name;
         this.lastName = lastName;
         this.weight = weight;

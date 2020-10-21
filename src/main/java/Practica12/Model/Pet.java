@@ -30,11 +30,7 @@ public class Pet {
     }
 
     public boolean isAdult(){
-        if(this.age>=2){
-            return true;
-        }else{
-            return false;
-        }
+        return this.age >= 2;
     }
 
     @Override
@@ -44,6 +40,7 @@ public class Pet {
                 ", vaccines=" + vaccines +
                 ", weight=" + weight +
                 ", height=" + height +
+                ", age=" + age +"\nisAdult?: " +isAdult()+
                 '}';
     }
 

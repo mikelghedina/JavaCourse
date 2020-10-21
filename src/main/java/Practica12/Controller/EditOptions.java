@@ -51,6 +51,8 @@ public class EditOptions {
                     System.out.println("Write the pet type: ");
                     String petType = scan.nextLine();
                     student.getPetsList().add(new Pet(petType));
+                    //Add Vaccines, set weight, set height, set age.
+                    return;
                 }else if(petCommand.toLowerCase().equalsIgnoreCase("Remove".toLowerCase())){
                     if(student.hasPet()){
                         System.out.println("Which one do you want to remove? ");

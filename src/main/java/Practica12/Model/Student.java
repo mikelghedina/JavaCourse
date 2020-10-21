@@ -16,8 +16,8 @@ public class Student extends Person{
         this.password = password;
 
     }
-    public Student(String name, String lastName, double weight, double height, Date birthDate, String ID, ArrayList<Pet> pets, String username, String password) {
-        super(name, lastName, weight, height, birthDate, ID,pets);
+    public Student(String name, String lastName, double weight, double height, Date birthDate, String ID, Apartment apartment, ArrayList<Pet> pets, String username, String password) {
+        super(name, lastName, weight, height, birthDate, ID, apartment, pets);
         this.userName = username;
         this.password = password;
 

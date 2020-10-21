@@ -55,18 +55,21 @@ public class OptionsMenu {
                         System.out.println("Type of Pet:");
                         String petType = scan.nextLine();
                         student.getPetsList().add(new Pet(petType));
-                        continue;
+                        studentDB.getStudents().add(student);
+                        student.createFullCredentials();
+                        System.out.println("Your account was created successfully!");
+                        System.out.println("These will be your credentials to enter your campus: ");
+                        System.out.println("Username: "+ student.getUserName());
+                        System.out.println("Password: "+ student.getPassword());
+
                     }else if(hasPet.toLowerCase().equalsIgnoreCase("N".toLowerCase())){
-                        continue;
-                    }else{
-                        System.out.println("Unknown command");
+                        studentDB.getStudents().add(student);
+                        student.createFullCredentials();
+                        System.out.println("Your account was created successfully!");
+                        System.out.println("These will be your credentials to enter your campus: ");
+                        System.out.println("Username: "+ student.getUserName());
+                        System.out.println("Password: "+ student.getPassword());
                     }
-                    studentDB.getStudents().add(student);
-                    student.createFullCredentials();
-                    System.out.println("Your account was created successfully!");
-                    System.out.println("These will be your credentials to enter your campus: ");
-                    System.out.println("Username: "+ student.getUserName());
-                    System.out.println("Password: "+ student.getPassword());
                 }else{
                     System.out.println("Unknown command.");
                     return;
@@ -76,7 +79,8 @@ public class OptionsMenu {
                 String userName = scan.nextLine();
                 System.out.println("Enter your Password:");
                 String password = scan.nextLine();
-                if(StudentUtils.isAcceptedUserName(studentDB,userName)||StudentUtils.isAcceptedPassword(studentDB, password)){
+                
+                if(StudentUtils.isAcceptedUserName(studentDB,userName)&&StudentUtils.isAcceptedPassword(studentDB, password)){
                     while (true){
                         //System.out.println("Welcome again!");
                         System.out.println("Choose an option: Show, Edit, Exit");
