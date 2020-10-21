@@ -12,14 +12,7 @@ public class Person {
     private ArrayList<Pet> petsList;
     private Apartment apartment;
 
-    public Person(String name, String lastName, Date birthDate, String ID,Apartment apartment) {
-        this.name = name;
-        this.lastName = lastName;
-        this.birthDate = birthDate;
-        this.ID = ID;
-        this.apartment = apartment;
-        this.petsList = new ArrayList<>();
-    }
+
     public Person(String name, String lastName, double weight, double height, Date birthDate,String ID, Apartment apartment){
         this.name = name;
         this.lastName = lastName;
@@ -38,6 +31,7 @@ public class Person {
         this.height = height;
         this.birthDate = birthDate;
         this.ID = ID;
+        this.apartment = apartment;
         this.petsList = petsList;
     }
 
