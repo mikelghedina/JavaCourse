@@ -27,4 +27,12 @@ public class StudentUtils {
             }
         }
     }
+    public static Student getStudentFromUser(StudentDataBase studentDataBase, String username){
+        for (Student student: studentDataBase.getStudents()) {
+            if(student.getUserName().equals(username)){
+                return student;
+            }
+        }
+        return null;
+    }
 }

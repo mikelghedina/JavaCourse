@@ -8,7 +8,7 @@ import Practica12.Model.Student;
 import Practica12.Service.StudentDataBase;
 import Practica12.Utils.EditOptions;
 import Practica12.Utils.StudentUtils;
-import com.sun.tools.jdeprscan.scan.Scan;
+
 
 import java.util.Scanner;
 
@@ -88,6 +88,7 @@ public class OptionsMenu {
                         else if(command1.toLowerCase().equalsIgnoreCase("Edit".toLowerCase())){
                             System.out.println("What do you want to edit?");
                             EditOptions.printEditOptions();
+                            EditOptions.loopEdit(scan, StudentUtils.getStudentFromUser(studentDB, userName));
                         }else if(command1.toLowerCase().equalsIgnoreCase("Exit".toLowerCase())){
                             return;
                         }else{
