@@ -3,7 +3,6 @@ package Practica12.Controller;
 import Practica12.Model.Apartment;
 import Practica12.Model.Pet;
 import Practica12.Model.Student;
-import Practica12.Service.StudentDataBase;
 
 import java.util.Scanner;
 
