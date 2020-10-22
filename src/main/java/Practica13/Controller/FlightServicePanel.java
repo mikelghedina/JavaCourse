@@ -10,9 +10,9 @@ public class FlightServicePanel {
     private Scanner scan;
     private AirplanesDB airplanesDB;
 
-    public FlightServicePanel() {
+    public FlightServicePanel(AirplanesDB airplanesDB) {
         this.scan = new Scanner(System.in);
-        this.airplanesDB = new AirplanesDB();
+        this.airplanesDB = airplanesDB;
     }
 
     public void printOptions(){

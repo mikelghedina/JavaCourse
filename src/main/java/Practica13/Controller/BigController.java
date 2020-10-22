@@ -13,7 +13,7 @@ public class BigController {
     public BigController() {
         this.scan = new Scanner(System.in);
         this.airportPanel = new AirportPanel();
-        this.flightServicePanel = new FlightServicePanel();
+        this.flightServicePanel = new FlightServicePanel(this.airportPanel);
     }
 
     public void startConsoleLoop(){
