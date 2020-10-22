@@ -18,13 +18,16 @@ public class AirportPanel {
         this.airplanesDB = new AirplanesDB();
     }
 
+    public void printOptions(){
+        System.out.println("Choose an option to proceed:");
+        System.out.println("[1] Add Airplane");
+        System.out.println("[2] Add Flight");
+        System.out.println("[x] Return");
+    }
     public void airportPanelLoop(){
         System.out.println("Welcome to this airport manager!");
         while(true){
-            System.out.println("Choose an option to proceed:");
-            System.out.println("[1] Add Airplane");
-            System.out.println("[2] Add Flight");
-            System.out.println("[x] Exit");
+            printOptions();
             String command = scan.nextLine();
 
             if(StringUtils.included(command,"1")){
@@ -39,15 +42,23 @@ public class AirportPanel {
             }else if(StringUtils.included(command, "2")){
                 System.out.println("Introduce an airplane: ");
                 String airplaneName = scan.nextLine();
-                System.out.println("Introduce the airport outs code: ");
-                String airportOutCode = scan.nextLine();
-                System.out.println("Introduce the airport destinations code: ");
-                String airportDestinationCode = scan.nextLine();
-                if(airplanesDB.checkAirplaneInDB(airplaneName)){
 
+                if(airplanesDB.checkAirplaneInDB(airplaneName)){
+                    System.out.println("Introduce the airport destinations code: ");
+                    String airportDestinationCode = scan.nextLine();
+                    System.out.println("Introduce the airport outs code: ");
+                    String airportOutCode = scan.nextLine();
+                    airplanesDB.airplaneFor(airplanesDB.getAirplanes(), airplaneName).addFlightsToAirplane(airportDestinationCode,airportOutCode);
+                }else{
+                    System.out.println("Unknown airplane.");
                 }
 
+            }else if(StringUtils.included(command,"x")){
+                return;
 
+            }else{
+                System.out.println("Unknown command.");
+                return;
             }
         }
     }
@@ -59,5 +70,5 @@ public class AirportPanel {
     public void setAirplanesDB(AirplanesDB airplanesDB) {
         this.airplanesDB = airplanesDB;
     }
-    
+
 }

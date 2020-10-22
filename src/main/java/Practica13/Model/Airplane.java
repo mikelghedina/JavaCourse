@@ -16,6 +16,18 @@ public class Airplane {
         this.flights = new ArrayList<>();
         getFlights().add(new Flight(destinationCode, outCode));
     }
+    public void printAirplane(){
+        System.out.println("ID: " + this.ID + "\nCapacity: ");
+    }
+    public void printAirplaneAndFlights(){
+        System.out.println("ID: " + this.ID + "\nCapacity: "); flightsFor(this.flights).printFlight();
+    }
+    public Flight flightsFor(ArrayList<Flight> flights){
+        for (Flight flight: flights) {
+            return flight;
+        }
+        return null;
+    }
 
     @Override
     public String toString() {

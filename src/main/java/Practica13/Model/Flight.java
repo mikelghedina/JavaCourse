@@ -8,6 +8,9 @@ public class Flight {
         this.destinationAirportCode = destinationAirportCode;
         this.outsAirportCode = outsAirportCode;
     }
+    public void printFlight(){
+        System.out.println(" Destination Airport Code: " + destinationAirportCode + "\tOuts Airport Code: " + outsAirportCode);
+    }
 
     @Override
     public String toString() {
