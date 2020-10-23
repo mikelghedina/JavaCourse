@@ -30,6 +30,7 @@ public class MenuOptions {
         System.out.println(author2);
         System.out.println(author3);
 
+        //Amb el següent loop mostrem les opcions a l'usuari.
         while(true){
             System.out.println("\nTria una de les opcions:");
             System.out.println("[1] Afegir llibre a "+ author2.getName());
