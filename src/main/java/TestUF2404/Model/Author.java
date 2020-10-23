@@ -18,6 +18,10 @@ public class Author {
     public void addBookToAuthor(Book book){
         books.add(book);
     }
+    public ArrayList<Book> getBooks() {
+        return books;
+    }
+
     public String getName() {
         return this.name;
     }
@@ -32,7 +36,7 @@ public class Author {
     }
     public String toString() {
         // to-do, print books as well
-        String author = "\n" + this.name + "(" + this.gender + ") at " + this.email + " List of books: "+ this.books.toString();
+        String author = "\n" + getName() + "(" + getGender() + ") at " + getEmail() + " List of books: "+ this.books.toString();
         return author;
     }
 }

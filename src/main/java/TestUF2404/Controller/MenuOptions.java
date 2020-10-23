@@ -12,6 +12,7 @@ public class MenuOptions {
         Scanner reader = new Scanner(System.in);
         //to-do
         //Creem els tres autors i els tres llibres.
+
         Author author1 = new Author("Stephen King", "stephen.king@gmail.com",'M');
         Author author2 = new Author("J.K.Rowling", "jk.rowling@gmail.com",'F');
         Author author3 = new Author("H.P.Lovecraft", "hp.lovecraft@gmail.com",'M');
@@ -91,7 +92,9 @@ public class MenuOptions {
     }
     public static void createAndAssign(Scanner reader, Author author1, Author author2, Author author3){
         //to-do
-        //
+        //Preguntem per pantalla quines opcions vol utilitzar l'usuari, depenent de l'opció s'executarà un mètode o un altre.
+        //A través del try n catch ens assegurem que si l'usuari introdueix un altre cosa que no sigui un número, l'aplicació no ens envii un error.
+
         System.out.println("A quin dels autors pertany el llibre que vols affegir?");
         System.out.println("Opcions: ");
         System.out.println("[1] Primer autor: "+ author1.getName());
