@@ -12,13 +12,6 @@ public class VampireDB {
         this.vampires = new ArrayList<>();
     }
 
-    @Override
-    public String toString() {
-        return "VampireDB{" +
-                "vampires=" + vampires +
-                '}';
-    }
-
     public ArrayList<Vampire> getVampires() {
         return vampires;
     }
