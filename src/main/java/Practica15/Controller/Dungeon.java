@@ -2,29 +2,27 @@ package Practica15.Controller;
 
 public class Dungeon {
 
-    private int length;
+    private int width;
     private int height;
     private int vampires;
     private int moves;
     private boolean vampiresMove;
 
-    public Dungeon(int length, int height, int vampires, int moves, boolean vampiresMove) {
-        this.length = length;
+    public Dungeon(int width, int height, int vampires, int moves, boolean vampiresMove) {
+        this.width = width;
         this.height = height;
         this.vampires = vampires;
         this.moves = moves;
         this.vampiresMove = vampiresMove;
     }
-    public void move(){
 
+
+    public int getWidth() {
+        return width;
     }
 
-    public int getLength() {
-        return length;
-    }
-
-    public void setLength(int length) {
-        this.length = length;
+    public void setWidth(int width) {
+        this.width = width;
     }
 
     public int getHeight() {

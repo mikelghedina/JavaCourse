@@ -4,6 +4,7 @@ public class Player {
 
     private int xPos;
     private int yPos;
+    public static final String VALUE_PLAYER = "@";
 
     public Player(int xPos, int yPos) {
         this.xPos = xPos;

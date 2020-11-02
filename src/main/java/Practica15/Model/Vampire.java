@@ -5,12 +5,13 @@ public class Vampire {
 
     private int xPos;
     private int yPos;
+    private boolean isDead;
+    public static final String VALUE_VAMPIRE = "v";
 
-
-
-    public Vampire(int xPos, int yPos) {
+    public Vampire(int xPos, int yPos, boolean isDead) {
         this.xPos = xPos;
         this.yPos = yPos;
+        this.isDead = isDead;
     }
 
     @Override
@@ -35,5 +36,13 @@ public class Vampire {
 
     public void setyPos(int yPos) {
         yPos++;
+    }
+
+    public boolean isDead() {
+        return isDead;
+    }
+
+    public void setDead(boolean dead) {
+        isDead = dead;
     }
 }
