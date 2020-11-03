@@ -14,6 +14,18 @@ public class Vampire {
         this.isDead = isDead;
     }
 
+    public void vampireMoveUp(){
+        setxPos(getxPos()-1);
+    }
+    public void vampireMoveDown(){
+        setxPos(getxPos()+1);
+    }
+    public void vampireMoveRight(){
+        setyPos(getyPos()+1);
+    }
+    public void vampireMoveLeft(){
+        setyPos(getyPos()-1);
+    }
     @Override
     public String toString() {
         return "Vampire{" +

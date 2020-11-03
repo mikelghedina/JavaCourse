@@ -17,9 +17,10 @@ public class VampireDB {
     }
     public void addVampires(int numberOfVampires, int width, int height){
         for(int i = 0; i<numberOfVampires; i++){
-            vampires.add(new Vampire(random.nextInt(width), random.nextInt(height), false));
+            getVampires().add(new Vampire(random.nextInt(width), random.nextInt(height), false));
         }
     }
+
 
     public ArrayList<Vampire> getVampires() {
         return vampires;

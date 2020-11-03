@@ -32,21 +32,22 @@ public class MoveOptions {
 
             }
         }
+
         board[player.getxPos()][player.getyPos()] = Player.VALUE_PLAYER;
         for(int l = 0; l<vampireDB.getVampires().size(); l++){
-            if(vampireDB.getVampires().get(l).getyPos() == player.getyPos() && vampireDB.getVampires().get(l).getxPos() == player.getxPos()){
-                vampireDB.addVampires(1, dungeon.getWidth(), dungeon.getHeight());
-            }
             board[vampireDB.getVampires().get(l).getxPos()][vampireDB.getVampires().get(l).getyPos()] = Vampire.VALUE_VAMPIRE;
         }
+
         for(int i = 0; i< dungeon.getHeight(); i++){
             for(int j = 0; j< dungeon.getWidth(); j++){
                 System.out.print(board[i][j]);
             }
             System.out.print("\n");
         }
+
         Scanner scan = new Scanner(System.in);
         while(dungeon.getMoves()>0){
+
             System.out.println("Give your moves");
             String command = scan.nextLine();
             for(int k = 0; k<command.length();k++){
@@ -70,17 +71,15 @@ public class MoveOptions {
                     }
                     System.out.print("\n");
                 }
+
                 if(dungeon.getVampires()== 0){
                     System.out.println("You win.");
                     return;
                 }
             }
             dungeon.setMoves(dungeon.getMoves()-1);
-
         }
         System.out.println("You loose.");
-
-
     }
 
 
@@ -100,9 +99,12 @@ public class MoveOptions {
             board[player.getxPos()][player.getyPos()] = ".";
             player.setxPos(player.getxPos()-1);
             board[player.getxPos()][player.getyPos()] = Player.VALUE_PLAYER;
+
+
         }
     }
     public void moveLeft(){
+
         if(player.getyPos()==0){
 
         }else{
@@ -119,9 +121,10 @@ public class MoveOptions {
             player.setyPos(player.getyPos()-1);
             board[player.getxPos()][player.getyPos()] = Player.VALUE_PLAYER;
         }
+
     }
     public void moveDown(){
-        if(player.getxPos()==dungeon.getHeight()){
+        if(player.getxPos()==dungeon.getWidth()-1){
 
         }else{
             for(int l = 0; l< vampireDB.getVampires().size(); l++){
@@ -139,7 +142,7 @@ public class MoveOptions {
         }
     }
     public void moveRight(){
-        if(player.getyPos()==dungeon.getWidth()){
+        if(player.getyPos()==dungeon.getHeight()-1){
 
         }else{
             for(int l = 0; l< vampireDB.getVampires().size(); l++){
