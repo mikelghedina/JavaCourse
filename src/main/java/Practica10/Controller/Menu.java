@@ -1,8 +1,10 @@
-package Practica10;
+package Practica10.Controller;
+
+import Practica10.Service.BirdsDatabase;
 
 import java.util.Scanner;
 
-import static Practica10.Utils.*;
+import static Practica10.Utils.Utils.*;
 
 public class Menu {
 

@@ -1,4 +1,6 @@
-package Practica10;
+package Practica10.Utils;
+
+import Practica10.Model.Bird;
 
 import java.util.ArrayList;
 
