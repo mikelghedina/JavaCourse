@@ -1,10 +1,7 @@
 package Practica15.Model;
 
-public class Vampire extends Player{
+public class Vampire {
 
-    public Vampire(int xPos, int yPos, int maxX, int maxY) {
-        super(xPos, yPos, maxX, maxY);
-    }
 
     private int xPos;
     private int yPos;

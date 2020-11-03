@@ -1,4 +1,4 @@
-package Practica15.Controller;
+package Practica15.Model;
 
 public class Dungeon {
 
