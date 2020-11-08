@@ -14,14 +14,14 @@ public class MoveOptions {
     private Dungeon dungeon;
     private Player player;
     private VampireDB vampireDB;
-    private String [][] board;
+    public static String [][] board;
 
     public MoveOptions(int width, int height, int vampires, int moves, boolean vampiresMove) {
         this.dungeon = new Dungeon(width, height, vampires, moves, vampiresMove);
         this.player = new Player(0,0);
         this.vampireDB = new VampireDB();
         vampireDB.addVampires(vampires, width,height);
-        this.board = new String [width][height];
+        board = new String [width][height];
         this.random = new Random();
     }
 
@@ -84,6 +84,7 @@ public class MoveOptions {
 
 
     public void moveUp(){
+        vampireDB.vampireMoveUp();
         if(this.player.getxPos() ==0){
 
         }else{
@@ -97,21 +98,15 @@ public class MoveOptions {
                 }
             }
             board[player.getxPos()][player.getyPos()] = ".";
-            for(int l = 0; l< vampireDB.getVampires().size(); l++){
-                board[vampireDB.getVampires().get(l).getxPos()][vampireDB.getVampires().get(l).getyPos()] = ".";
-            }
-            vampireDB.vampireMoveUp();
+
             player.setxPos(player.getxPos()-1);
-            for(int l = 0; l< vampireDB.getVampires().size(); l++){
-                board[vampireDB.getVampires().get(l).getxPos()][vampireDB.getVampires().get(l).getyPos()] = Vampire.VALUE_VAMPIRE;
-            }
+
             board[player.getxPos()][player.getyPos()] = Player.VALUE_PLAYER;
-
-
         }
     }
     public void moveLeft(){
 
+        vampireDB.vampireMoveLeft();
         if(player.getyPos()==0){
 
         }else{
@@ -125,19 +120,15 @@ public class MoveOptions {
                 }
             }
             board[player.getxPos()][player.getyPos()] = ".";
-            for(int l = 0; l< vampireDB.getVampires().size(); l++){
-                board[vampireDB.getVampires().get(l).getxPos()][vampireDB.getVampires().get(l).getyPos()] = ".";
-            }
+
             player.setyPos(player.getyPos()-1);
-            vampireDB.vampireMoveLeft();
-            for(int l = 0; l< vampireDB.getVampires().size(); l++){
-                board[vampireDB.getVampires().get(l).getxPos()][vampireDB.getVampires().get(l).getyPos()] = Vampire.VALUE_VAMPIRE;
-            }
+
             board[player.getxPos()][player.getyPos()] = Player.VALUE_PLAYER;
         }
 
     }
     public void moveDown(){
+        vampireDB.vampireMoveDown(dungeon);
         if(player.getxPos()==dungeon.getWidth()-1){
 
         }else{
@@ -150,19 +141,16 @@ public class MoveOptions {
                     }
                 }
             }
-            for(int l = 0; l< vampireDB.getVampires().size(); l++){
-                board[vampireDB.getVampires().get(l).getxPos()][vampireDB.getVampires().get(l).getyPos()] = ".";
-            }
+
             board[player.getxPos()][player.getyPos()] = ".";
-            vampireDB.vampireMoveDown(dungeon);
+
             player.setxPos(player.getxPos()+1);
-            for(int l = 0; l< vampireDB.getVampires().size(); l++){
-                board[vampireDB.getVampires().get(l).getxPos()][vampireDB.getVampires().get(l).getyPos()] = Vampire.VALUE_VAMPIRE;
-            }
+
             board[player.getxPos()][player.getyPos()] = Player.VALUE_PLAYER;
         }
     }
     public void moveRight(){
+        vampireDB.vampireMoveRight(dungeon);
         if(player.getyPos()==dungeon.getHeight()-1){
 
         }else{
@@ -175,15 +163,10 @@ public class MoveOptions {
                     }
                 }
             }
-            for(int l = 0; l< vampireDB.getVampires().size(); l++){
-                board[vampireDB.getVampires().get(l).getxPos()][vampireDB.getVampires().get(l).getyPos()] = ".";
-            }
             board[player.getxPos()][player.getyPos()] = ".";
-            vampireDB.vampireMoveRight(dungeon);
+
             player.setyPos(player.getyPos()+1);
-            for(int l = 0; l< vampireDB.getVampires().size(); l++){
-                board[vampireDB.getVampires().get(l).getxPos()][vampireDB.getVampires().get(l).getyPos()] = Vampire.VALUE_VAMPIRE;
-            }
+
             board[player.getxPos()][player.getyPos()] = Player.VALUE_PLAYER;
         }
     }
