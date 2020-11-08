@@ -97,7 +97,14 @@ public class MoveOptions {
                 }
             }
             board[player.getxPos()][player.getyPos()] = ".";
+            for(int l = 0; l< vampireDB.getVampires().size(); l++){
+                board[vampireDB.getVampires().get(l).getxPos()][vampireDB.getVampires().get(l).getyPos()] = ".";
+            }
+            vampireDB.vampireMoveUp();
             player.setxPos(player.getxPos()-1);
+            for(int l = 0; l< vampireDB.getVampires().size(); l++){
+                board[vampireDB.getVampires().get(l).getxPos()][vampireDB.getVampires().get(l).getyPos()] = Vampire.VALUE_VAMPIRE;
+            }
             board[player.getxPos()][player.getyPos()] = Player.VALUE_PLAYER;
 
 
@@ -118,7 +125,14 @@ public class MoveOptions {
                 }
             }
             board[player.getxPos()][player.getyPos()] = ".";
+            for(int l = 0; l< vampireDB.getVampires().size(); l++){
+                board[vampireDB.getVampires().get(l).getxPos()][vampireDB.getVampires().get(l).getyPos()] = ".";
+            }
             player.setyPos(player.getyPos()-1);
+            vampireDB.vampireMoveLeft();
+            for(int l = 0; l< vampireDB.getVampires().size(); l++){
+                board[vampireDB.getVampires().get(l).getxPos()][vampireDB.getVampires().get(l).getyPos()] = Vampire.VALUE_VAMPIRE;
+            }
             board[player.getxPos()][player.getyPos()] = Player.VALUE_PLAYER;
         }
 
@@ -136,8 +150,15 @@ public class MoveOptions {
                     }
                 }
             }
+            for(int l = 0; l< vampireDB.getVampires().size(); l++){
+                board[vampireDB.getVampires().get(l).getxPos()][vampireDB.getVampires().get(l).getyPos()] = ".";
+            }
             board[player.getxPos()][player.getyPos()] = ".";
+            vampireDB.vampireMoveDown(dungeon);
             player.setxPos(player.getxPos()+1);
+            for(int l = 0; l< vampireDB.getVampires().size(); l++){
+                board[vampireDB.getVampires().get(l).getxPos()][vampireDB.getVampires().get(l).getyPos()] = Vampire.VALUE_VAMPIRE;
+            }
             board[player.getxPos()][player.getyPos()] = Player.VALUE_PLAYER;
         }
     }
@@ -154,8 +175,15 @@ public class MoveOptions {
                     }
                 }
             }
+            for(int l = 0; l< vampireDB.getVampires().size(); l++){
+                board[vampireDB.getVampires().get(l).getxPos()][vampireDB.getVampires().get(l).getyPos()] = ".";
+            }
             board[player.getxPos()][player.getyPos()] = ".";
+            vampireDB.vampireMoveRight(dungeon);
             player.setyPos(player.getyPos()+1);
+            for(int l = 0; l< vampireDB.getVampires().size(); l++){
+                board[vampireDB.getVampires().get(l).getxPos()][vampireDB.getVampires().get(l).getyPos()] = Vampire.VALUE_VAMPIRE;
+            }
             board[player.getxPos()][player.getyPos()] = Player.VALUE_PLAYER;
         }
     }

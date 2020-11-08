@@ -39,7 +39,7 @@ public class Vampire {
     }
 
     public void setxPos(int xPos) {
-        xPos--;
+        this.xPos= xPos;
     }
 
     public int getyPos() {
@@ -47,7 +47,7 @@ public class Vampire {
     }
 
     public void setyPos(int yPos) {
-        yPos++;
+        this.yPos = yPos;
     }
 
     public boolean isDead() {
